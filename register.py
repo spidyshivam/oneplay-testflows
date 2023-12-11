@@ -63,9 +63,9 @@ register_btn.click()
 time.sleep(3)
 
 try:
-    verify_register = driver.find_element(By.XPATH, "//a[@class='btn btn-block customLinearGradient border-0 font18 borderRadius10 font500 text-white' and @href='javascript:void(0)']")
+    verify_register_btn = driver.find_element(By.XPATH, "//a[@class='btn btn-block customLinearGradient border-0 font18 borderRadius10 font500 text-white' and @href='javascript:void(0)']")
    # verify_register = driver.find_element(By.XPATH, "//p[text()=' Please check your email to confirm your email id ']")
-    verify_register.click()
+    verify_register_btn.click()
     print("Registered Successfuly")
 except NoSuchElementException:
     #retry_box = driver.find_element(By.XPATH, "//button[@type='button' and contains(@class, 'swal2-confirm')]")

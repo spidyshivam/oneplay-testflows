@@ -39,7 +39,7 @@ login_btn.click()
 time.sleep(5)
 
 if (driver.current_url == "https://www.oneplay.in/dashboard/home"):
-    print(f"Login Successful")
+    print("Login Successful")
 else:
     print("Login Failed")
 
