@@ -12,13 +12,15 @@ headless = os.environ.get("HEADLESS")
 email = os.environ.get("LOGIN_EMAIL")
 password = os.environ.get("LOGIN_PASSWORD")
 
-options = Options()
 
-if headless:
+if headless == "YES":
+    options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
+    driver = webdriver.Chrome(options=options)
+else:
+    driver = webdriver.Chrome()
 
-driver = webdriver.Chrome(options=options)
 
 driver.get("https://www.oneplay.in/dashboard/login")
 print("Website opened...")
