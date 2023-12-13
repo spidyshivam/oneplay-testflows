@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-from selenium import webdriver
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from dotenv import load_dotenv
-from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
+from modules.driver import driver_create, driver_close
 import os
 import time
 
@@ -17,13 +15,7 @@ phone = os.environ.get("REGISTER_PHONE")
 password = os.environ.get("REGISTER_PASSWORD")
 gender = os.environ.get("REGISTER_GENDER")
 
-if headless == "YES":
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(options=options)
-else:
-    driver = webdriver.Chrome()
+driver = driver_create(headless)
 
 driver.get("https://www.oneplay.in/dashboard/register")
 print("Website opened...")
@@ -74,4 +66,4 @@ except NoSuchElementException:
 
 time.sleep(3)
 
-driver.close()
+driver_close(driver)
