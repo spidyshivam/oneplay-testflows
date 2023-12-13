@@ -2,3 +2,5 @@
 
 ## Currently Implemented
 - Login
+- Register
+- Change Password
